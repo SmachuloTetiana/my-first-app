@@ -1,0 +1,36 @@
+<div class="container">
+  <h2 class="text-left">First Practic Test:</h2>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <input type="text" [(ngModel)]="username">
+      <button type="submit" [disabled]="username === ''" (click)="resetInput()">Click Button</button>
+      <p>{{ username }}</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <hr>
+  <h2 class="text-left">Second Practic Test:</h2>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button>
+      <p *ngIf="showSecret">Show Secret</p>
+    </div>
+
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="onPushNumbers()">Push Numbers</button>
+      <div *ngFor="let logItem of log" [ngClass]="{blueBackground: logItem >= 5}">{{ logItem }}</div>
+    </div>
+  </div>
+
+
+  <hr>
+  <app-server (intervalFired)="onIntervalFired($event)"></app-server>
+  <app-servers *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-servers>
+  <app-servers *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-servers>
+  <app-servers *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-servers>
+</div>

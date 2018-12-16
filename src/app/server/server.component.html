@@ -1,0 +1,8 @@
+
+<p 
+	[ngStyle]="{backgroundColor: getColor()}"
+	[ngClass]="{online: serverStatus === 'online'}">Server with ID {{ serverId }} is {{ severStatus }}</p>
+<!-- <p>{{ getServerStatus() }}</p> -->
+
+<button class="btn btn-primary" (click)="onStartGame()">Start</button>
+<button class="btn btn-primary" (click)="onStopGame()">Stop</button>
